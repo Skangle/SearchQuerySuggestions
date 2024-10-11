@@ -1,0 +1,29 @@
+# Python program for search query suggestions
+
+def suggest_search_completions(search_history, query):
+    # Find all search history entries that start with the query
+    suggestions = [item for item in search_history if item.startswith(query)]
+    
+    if suggestions:
+        print("Suggestions:")
+        for suggestion in suggestions:
+            print(suggestion)
+    else:
+        print("No suggestions found.")
+
+# Sample search history
+search_history = [
+    "apple",
+    "banana",
+    "carrot",
+    "pear",
+    "pineapple",
+    "potato",
+    "strawberry"
+]
+
+# Get the user's partial search query
+query = input("Enter your partial search query: ").lower()
+
+# Call the function to suggest completions
+suggest_search_completions(search_history, query)
